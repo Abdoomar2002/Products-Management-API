@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Products_Management_API.Server.Data;
+using Products_Management_API.Server.Models;
+using Products_Management_API.Server.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=app.db"));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ProductRepository>();
 
 var app = builder.Build();
 
