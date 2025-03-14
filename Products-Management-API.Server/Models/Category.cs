@@ -9,6 +9,8 @@
         {
             Id = Guid.NewGuid();
             Name = name;
+            ProductCount = 0;
         }
+
     }
 }
