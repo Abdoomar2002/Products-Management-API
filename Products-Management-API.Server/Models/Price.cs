@@ -9,5 +9,10 @@
             Value = val;
             Currency = curr;
         }
+        public  Price()
+        {
+            Value = 0;
+            Currency = "EGP";
+        }
     }
 }
