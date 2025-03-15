@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Products_Management_API.Server.Data;
+using Products_Management_API.Server.Middleware;
 using Products_Management_API.Server.Models;
 using Products_Management_API.Server.Repositories;
 
@@ -38,6 +39,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 
