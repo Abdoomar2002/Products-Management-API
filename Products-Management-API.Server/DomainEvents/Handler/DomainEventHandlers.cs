@@ -23,6 +23,7 @@ namespace Products_Management_API.Server.DomainEvents.Handler
             var category = _categoryRepository.GetById(notification.CategoryId);
             if (category != null)
             {
+                // For additional confirmation, I could use category.ProductCount++ 
                 var productCount = _productRepository.GetAll().Result.Count(p => p.CategoryId == notification.CategoryId);
                 category.Result.UpdateProductCount(productCount);
                 _categoryRepository.SaveChanges();
@@ -35,6 +36,7 @@ namespace Products_Management_API.Server.DomainEvents.Handler
             var category = _categoryRepository.GetById(notification.CategoryId);
             if (category != null)
             {
+                // For additional confirmation, I could use category.ProductCount--
                 var productCount = _productRepository.GetAll().Result.Count(p => p.CategoryId == notification.CategoryId);
                 category.Result.UpdateProductCount(productCount);
                 _categoryRepository.SaveChanges();

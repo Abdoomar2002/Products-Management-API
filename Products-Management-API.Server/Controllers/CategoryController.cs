@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Products_Management_API.CQRS.Command.Category;
+using Products_Management_API.Server.CQRS.Command.Category;
 using Products_Management_API.Server.CQRS.Queries.Category;
 using Products_Management_API.Server.Exceptions;
 namespace Products_Management_API.Server.Controllers
@@ -53,7 +53,7 @@ namespace Products_Management_API.Server.Controllers
             return NoContent(); // 204 for successful deletion with no content
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetCategoryById/{id}")]
         public async Task<IActionResult> GetCategoryById(Guid id)
         {
             var query = new GetCategoryByGuidQuery { Id = id };
@@ -65,7 +65,7 @@ namespace Products_Management_API.Server.Controllers
             return Ok(category); // 200 for successful retrieval
         }
 
-        [HttpGet]
+        [HttpGet("GetAllCategories")]
         public async Task<IActionResult> GetAllCategories()
         {
             var query = new GetAllCategoriesQuery();

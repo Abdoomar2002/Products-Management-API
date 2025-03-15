@@ -17,7 +17,7 @@ namespace Products_Management_API.Server.CQRS.Command.Product.Handler
 
         public async Task<Guid> Handle(CreateProduct request, CancellationToken cancellationToken)
         {
-            var product = new Server.Models.Product
+            var product = new Models.Product
             {
                 Id = Guid.NewGuid(),
                 Name = request.Name,

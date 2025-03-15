@@ -17,7 +17,7 @@
         {
             Id = Guid.NewGuid();
             Name = string.Empty;
-            Price = new Price();
+            Price = new Price(0,"");
             CategoryId = Guid.Empty;
         }
     }

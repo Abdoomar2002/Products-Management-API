@@ -2,8 +2,8 @@
 {
     public class Price
     {
-        public decimal Value { get;}
-        public string Currency { get;}
+        public decimal Value { get; set; }
+        public string Currency { get; set; }
         public Price(decimal val,string curr) 
         {
             Value = val;
@@ -11,8 +11,7 @@
         }
         public  Price()
         {
-            Value = 0;
-            Currency = "EGP";
+
         }
     }
 }

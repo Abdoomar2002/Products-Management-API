@@ -1,8 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Products_Management_API.CQRS.Command.Product;
-using Products_Management_API.CQRS.Queries.Product;
-using Products_Management_API.Server.CQRS.Command.Product.Products_Management_API.CQRS.Command.Product;
+using Products_Management_API.Server.CQRS.Command.Product;
+using Products_Management_API.Server.CQRS.Queries.Product;
 using Products_Management_API.Server.Exceptions;
 
 namespace Products_Management_API.Server.Controllers
@@ -59,7 +58,7 @@ namespace Products_Management_API.Server.Controllers
             return NoContent(); // 204 for successful deletion
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetProductById/{id}")]
         public async Task<IActionResult> GetProductById(Guid id)
         {
             var query = new GetProductByGuidQuery { Id = id };
@@ -71,7 +70,7 @@ namespace Products_Management_API.Server.Controllers
             return Ok(product); // 200 for successful retrieval
         }
 
-        [HttpGet]
+        [HttpGet("GetAllProducts")]
         public async Task<IActionResult> GetAllProducts()
         {
             var query = new GetAllProductsQuery();
@@ -83,7 +82,7 @@ namespace Products_Management_API.Server.Controllers
             return Ok(products); // 200 if products exist
         }
 
-        [HttpGet("category/{categoryId}")]
+        [HttpGet("GetProductsByCategory/{categoryId}")]
         public async Task<IActionResult> GetProductsByCategory(Guid categoryId)
         {
             var query = new GetProductsByCategoryQuery { CategoryId = categoryId };
