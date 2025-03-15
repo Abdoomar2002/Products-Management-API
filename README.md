@@ -87,8 +87,8 @@ dotnet restore
 ### 🔧 3. Set Up the Database
 
 ```bash
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+dotnet ef migrations add InitialCreate --project '.\Products-Management-API.Server\Products-Management-API.Server.csproj'
+dotnet ef database update --project '.\Products-Management-API.Server\Products-Management-API.Server.csproj'
 ```
 
 ---
@@ -100,7 +100,7 @@ dotnet run
 ```
 
 The API will be live at:  
-👉 `https://localhost:5001/api`  
+👉 `https://localhost:7211/api`  
 
 ---
 
@@ -120,9 +120,9 @@ After running the app, head to:
 | `POST` | `/api/product`            | Create a new product (201) |
 | `PUT`  | `/api/product/{id}`       | Update a product (204) |
 | `DELETE` | `/api/product/{id}`     | Delete a product (204) |
-| `GET`  | `/api/product/{id}`       | Get a product by ID (200) |
-| `GET`  | `/api/product`            | Get all products (200/204) |
-| `GET`  | `/api/product/category/{id}` | Get products by category (200/204) |
+| `GET`  | `/api/product/GetProductById/{id}`       | Get a product by ID (200) |
+| `GET`  | `/api/product/GetAllProducts`            | Get all products (200/204) |
+| `GET`  | `/api/product/GetProductsByCategory/{id}` | Get products by category (200/204) |
 
 ---
 
@@ -130,11 +130,11 @@ After running the app, head to:
 
 | Method | Endpoint                  | Description |
 |--------|---------------------------|-------------|
-| `POST` | `/api/category`           | Create a new category (201) |
-| `PUT`  | `/api/category/{id}`      | Update a category (204) |
-| `DELETE` | `/api/category/{id}`    | Delete a category (204) |
-| `GET`  | `/api/category/{id}`      | Get a category by ID (200) |
-| `GET`  | `/api/category`           | Get all categories (200/204) |
+| `POST` | `/api/Category`           | Create a new category (201) |
+| `PUT`  | `/api/Category/{id}`      | Update a category (204) |
+| `DELETE` | `/api/Category/{id}`    | Delete a category (204) |
+| `GET`  | `/api/Category/GetCategoryById/{id}`      | Get a category by ID (200) |
+| `GET`  | `/api/Category`           | Get all categories (200/204) |
 
 ---
 
@@ -144,10 +144,14 @@ After running the app, head to:
 
 ```json
 {
+  {
   "name": "Gaming Mouse",
-  "priceValue": 29.99,
-  "currency": "USD",
-  "categoryId": "e4f7a5b8-6a2e-4374-b08b-1a8e8dc6eaba"
+  "categoryId": "d7119bcd-f542-4b07-b4fe-678dd055bddb",
+  "price": {
+    "value": 29.99,
+    "currency": "USD"
+  }
+ }
 }
 ```
 
