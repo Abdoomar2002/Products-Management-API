@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Products_Management_API.Server.CQRS.Queries.Category.Handler;
+using Products_Management_API.Server.CQRS.Queries.Category;
 using Products_Management_API.Server.Models;
 using Products_Management_API.Server.Repositories;
 using System.Collections.Generic;

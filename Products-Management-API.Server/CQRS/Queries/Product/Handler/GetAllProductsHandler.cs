@@ -14,9 +14,9 @@ namespace Products_Management_API.CQRS.Queries.Product.Handler
             _repository = repository;
         }
 
-        public Task<IEnumerable<Product>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Product>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(_repository.GetAll()).Result;
+            return await Task.FromResult(_repository.GetAll()).Result;
         }
     }
 }

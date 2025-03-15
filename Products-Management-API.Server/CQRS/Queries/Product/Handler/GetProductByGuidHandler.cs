@@ -14,9 +14,9 @@ namespace Products_Management_API.CQRS.Queries.Product.Handler
             _repository = repository;
         }
 
-        public Task<Product> Handle(GetProductByGuidQuery request, CancellationToken cancellationToken)
+        public  Task<Product> Handle(GetProductByGuidQuery request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(_repository.GetById(request.Id)).Result;
+            return  Task.FromResult(_repository.GetById(request.Id)).Result;
         }
     }
 }
