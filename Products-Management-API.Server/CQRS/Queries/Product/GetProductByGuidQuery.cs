@@ -1,8 +1,8 @@
 ﻿using MediatR;
 
-namespace Products_Management_API.CQRS.Queries.Product
+namespace Products_Management_API.Server.CQRS.Queries.Product
 {
-    public class GetProductByGuidQuery : IRequest<Server.Models.Product>
+    public class GetProductByGuidQuery : IRequest<Models.Product>
     {
         public Guid Id { get; set; }
     }

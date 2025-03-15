@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Products_Management_API.Server.Repositories;
 
-namespace Products_Management_API.CQRS.Command.Product.Handler
+namespace Products_Management_API.Server.CQRS.Command.Product.Handler
 {
     public class UpdateProductHandler : IRequestHandler<UpdateProduct>
     {

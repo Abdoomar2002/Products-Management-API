@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Products_Management_API.Server.Models;
 
-namespace Products_Management_API.CQRS.Command.Product
+namespace Products_Management_API.Server.CQRS.Command.Product
 {
     public class UpdateProduct : IRequest
     {

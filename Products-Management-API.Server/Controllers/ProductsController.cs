@@ -23,7 +23,8 @@ namespace Products_Management_API.Server.Controllers
         {
             if (string.IsNullOrWhiteSpace(command.Name) || command.Price.Value <= 0)
                 throw new ApiException("Product name and valid price are required", 400);
-
+            if (command.CategoryId == Guid.Empty)
+                throw new ApiException("Category ID is required", 400);
             var productId = await _mediator.Send(command);
 
             if (productId == Guid.Empty)

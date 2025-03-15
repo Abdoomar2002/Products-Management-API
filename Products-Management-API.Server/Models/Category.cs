@@ -11,6 +11,9 @@
             Name = name;
             ProductCount = 0;
         }
-
+        public void UpdateProductCount(int count)
+        {
+            ProductCount = count;
+        }
     }
 }

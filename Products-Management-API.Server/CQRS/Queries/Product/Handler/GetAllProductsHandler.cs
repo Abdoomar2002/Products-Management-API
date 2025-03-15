@@ -1,8 +1,6 @@
 ﻿using MediatR;
-using Products_Management_API.Server.Models;
 using Products_Management_API.Server.Repositories;
-
-namespace Products_Management_API.CQRS.Queries.Product.Handler
+namespace Products_Management_API.Server.CQRS.Queries.Product.Handler
 {
     using Products_Management_API.Server.Models;
     public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<Product>>

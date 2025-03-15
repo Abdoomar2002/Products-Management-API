@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Products_Management_API.Server.Data;
 using Products_Management_API.Server.Middleware;
-using Products_Management_API.Server.Models;
 using Products_Management_API.Server.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

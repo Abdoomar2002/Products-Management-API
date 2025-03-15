@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Products_Management_API.Server.Repositories;
 
-namespace Products_Management_API.CQRS.Command.Category.Handler
+namespace Products_Management_API.Server.CQRS.Command.Category.Handler
 {
     using Category = Server.Models.Category;
     public class DeleteCategoryHandler : IRequestHandler<DeleteCategory>

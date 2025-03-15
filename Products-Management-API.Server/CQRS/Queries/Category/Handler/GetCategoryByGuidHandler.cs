@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Products_Management_API.Server.Repositories;
-using Products_Management_API.Server.CQRS.Queries.Category;
 
-namespace Products_Management_API.CQRS.Queries.Category.Handler
+
+namespace Products_Management_API.Server.CQRS.Queries.Category.Handler
 {
-    using Category = Server.Models.Category;
+    using Category = Models.Category;
     public class GetCategoryByGuidHandler : IRequestHandler<GetCategoryByGuidQuery, Category>
     {
         private readonly IRepository<Category> _categoryRepository;
