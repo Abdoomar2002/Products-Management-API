@@ -1,0 +1,28 @@
+<div class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">Category List</h1>
+        <a routerLink="/categories/create" class="btn-primary">Add New Category</a>
+    </div>
+
+    <div class="bg-white rounded-lg shadow overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left">Name</th>
+                    <th class="px-6 py-3 text-left">Product Count</th>
+                    <th class="px-6 py-3 text-left">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr *ngFor="let category of categories$ | async">
+                    <td class="px-6 py-4">{{ category.name }}</td>
+                    <td class="px-6 py-4">{{ category.productCount }}</td>
+                    <td class="px-6 py-4 space-x-2">
+                        <a [routerLink]="['/categories/edit', category.id]" class="btn-secondary">Edit</a>
+                        <button (click)="deleteCategory(category.id)" class="btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

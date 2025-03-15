@@ -1,0 +1,30 @@
+<div class="container mx-auto px-4 py-8 max-w-2xl">
+    <h2 class="text-2xl font-bold mb-6">{{ categoryId ? 'Edit' : 'Create' }} Category</h2>
+
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+        <div class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Category Name</label>
+                <input type="text" formControlName="name" class="mt-1 block w-full rounded-md">
+                <div *ngIf="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched"
+                     class="text-red-500 text-sm mt-1">
+                    Name is required
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Product Count</label>
+                <input type="number" formControlName="productCount" class="mt-1 block w-full rounded-md">
+                <div *ngIf="categoryForm.get('productCount')?.invalid"
+                     class="text-red-500 text-sm mt-1">
+                    Product count must be 0 or higher
+                </div>
+            </div>
+
+            <div class="flex justify-end space-x-4">
+                <a routerLink="/categories" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

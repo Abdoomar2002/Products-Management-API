@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+.input {
+  @apply border-gray-300 focus:border-primary focus:ring-primary rounded-md shadow-sm;
+}
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-4 border-t-transparent border-primary mx-auto my-8;
+}
+
+.skeleton-loader {
+  @apply bg-gray-200 animate-pulse rounded-md;
+}
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-4 py-2 rounded-md hover:bg-secondary-dark transition-colors;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white px-4 py-2 rounded-md hover:bg-danger-dark transition-colors;
+  }
+}
