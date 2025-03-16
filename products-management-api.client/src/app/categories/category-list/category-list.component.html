@@ -10,6 +10,7 @@
                 <tr>
                     <th class="px-6 py-3 text-left">Name</th>
                     <th class="px-6 py-3 text-left">Product Count</th>
+                    <th class="px-6 py-3 text-left">View Products</th>
                     <th class="px-6 py-3 text-left">Actions</th>
                 </tr>
             </thead>
@@ -17,6 +18,12 @@
                 <tr *ngFor="let category of categories$ | async">
                     <td class="px-6 py-4">{{ category.name }}</td>
                     <td class="px-6 py-4">{{ category.productCount }}</td>
+                    <td class="px-6 py-4">
+                        <a [routerLink]="['/categories', category.name, category.id]"
+                           class="btn-primary">
+                            View
+                        </a>
+                    </td>
                     <td class="px-6 py-4 space-x-2">
                         <a [routerLink]="['/categories/edit', category.id]" class="btn-secondary">Edit</a>
                         <button (click)="deleteCategory(category.id)" class="btn-danger">Delete</button>

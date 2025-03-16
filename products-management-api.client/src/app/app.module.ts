@@ -13,6 +13,7 @@ import { CategoryListComponent } from './categories/category-list/category-list.
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
 import { NavigationComponent } from './navigation/navigation/navigation.component';
 import { routes } from './app-routing.module';
+import { CategoryProductsComponent } from './categories/category-products/category-products.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { routes } from './app-routing.module';
     CategoryListComponent,
     CategoryFormComponent,
     NavigationComponent,
-    AppComponent
+    AppComponent,
+    CategoryProductsComponent
   ],
   imports: [
     BrowserModule,

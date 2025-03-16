@@ -14,7 +14,7 @@
 
             <div>
                 <label class="block text-sm font-medium text-gray-700">Product Count</label>
-                <input type="number" formControlName="productCount" class="mt-1 block w-full rounded-md">
+                <input type="number" formControlName="productCount" readonly class="mt-1 block w-full rounded-md">
                 <div *ngIf="categoryForm.get('productCount')?.invalid"
                      class="text-red-500 text-sm mt-1">
                     Product count must be 0 or higher

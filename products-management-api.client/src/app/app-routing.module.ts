@@ -5,6 +5,7 @@ import { CategoryListComponent } from "./categories/category-list/category-list.
 import { HomeComponent } from "./home/home.component";
 import { ProductFormComponent } from "./products/product-form/product-form.component";
 import { ProductListComponent } from "./products/product-list/product-list.component";
+import { CategoryProductsComponent } from "./categories/category-products/category-products.component";
 
 export const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -14,6 +15,10 @@ export const routes: Routes = [
   { path: "categories", component: CategoryListComponent },
   { path: "categories/create", component: CategoryFormComponent },
   { path: "categories/edit/:id", component: CategoryFormComponent },
+  {
+    path: 'categories/:name/:id',
+    component: CategoryProductsComponent
+  },
   { path: "**", redirectTo: "/" }
 ];
 
